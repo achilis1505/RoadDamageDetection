@@ -58,7 +58,7 @@ st.write("Detect the road damage in using an Image input. Upload the image and s
 
 image_file = st.file_uploader("Upload Image", type=['png', 'jpg'])
 
-score_threshold = st.slider("Confidence Threshold", min_value=0.0, max_value=1.0, value=0.5, step=0.05)
+score_threshold = st.slider("Confidence Threshold", min_value=0.0, max_value=1.0, value=0.15, step=0.05)
 st.write("Lower the threshold if there is no damage detected, and increase the threshold if there is false prediction.")
 
 if image_file is not None:

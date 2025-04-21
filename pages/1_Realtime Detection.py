@@ -27,7 +27,7 @@ ROOT = HERE.parent
 
 logger = logging.getLogger(__name__)
 
-MODEL_URL = "https://github.com/oracl4/RoadDamageDetection/raw/main/models/YOLOv8_Small_RDD.pt"  # noqa: E501
+MODEL_URL = "https://github.com/achilis1505/RoadDamageDetection/raw/main/models/YOLOv8_Small_RDD.pt"  # noqa: E501
 MODEL_LOCAL_PATH = ROOT / "./models/YOLOv8_Small_RDD.pt"
 download_file(MODEL_URL, MODEL_LOCAL_PATH, expected_size=89569358)
 
@@ -45,10 +45,11 @@ else:
     st.session_state[cache_key] = net
 
 CLASSES = [
-    "Longitudinal Crack",
-    "Transverse Crack",
-    "Alligator Crack",
-    "Potholes"
+    "Cracks",
+    "Alligator Cracks",
+    "Potholes",
+    "Patching",
+    "Rutting"
 ]
 
 class Detection(NamedTuple):
@@ -108,7 +109,7 @@ webrtc_ctx = webrtc_streamer(
     async_processing=True,
 )
 
-score_threshold = st.slider("Confidence Threshold", min_value=0.0, max_value=1.0, value=0.5, step=0.05)
+score_threshold = st.slider("Confidence Threshold", min_value=0.0, max_value=1.0, value=0.15, step=0.05)
 
 st.write("Lower the threshold if there is no damage detected, and increase the threshold if there is false prediction.")
 
