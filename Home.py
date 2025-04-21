@@ -5,7 +5,6 @@ st.set_page_config(
     page_icon="🛣️",
 )
 
-st.image("./resource/banner.png", use_column_width="always")
 st.divider()
 st.title("Road Damage Detection Application")
 
@@ -32,13 +31,3 @@ st.markdown(
     - All rights reserved on YOLOv8 license permits by [Ultralytics](https://github.com/ultralytics/ultralytics) and [Streamlit](https://streamlit.io/) framework
 """
 )
-
-st.divider()
-
-st.markdown(
-    """
-    This project is created for the [Road Damage Detection Challenge](https://s.id/RDDHariJalan23) by [Ministry of Public Works and Housing](https://pu.go.id/) for celebrating the "Peringatan Hari Jalan 2023".
-    """
-    
-)
-
